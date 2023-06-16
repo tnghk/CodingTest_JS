@@ -1,22 +1,16 @@
-function factorial(n) {
-    let num = BigInt(1);
-    
-    for(let i = 1; i < n + 1; i++) {
-        num *= BigInt(i);
+function factorial(n){
+    if (n <= 1){
+        return 1;
     }
-    
-    return num;
+    else{
+        return n*factorial(n-1);    
+    }
 }
 
 function solution(n) {
-    let answer = 0;
-    
-    for(let i = 1; i < 11; i++) {
-        if(factorial(i) > n) {
-            break;
+    for(let i = 1; i<12; i++){
+        if (factorial(i) > n){
+            return i-1;
         }
-        answer = i;
     }
-    
-    return answer;
 }
