@@ -7,7 +7,6 @@ function solution(chicken) {
         coupon = chicken % 10;
         chicken = Math.floor(chicken / 10) + coupon;
     }
-    
-    
-    return service + Math.floor(coupon / 10);
+  
+    return service;
 }
