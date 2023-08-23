@@ -9,6 +9,6 @@ let input = [];
 rl.on('line', function (line) {
     input = [line];
 }).on('close',function(){
-    str = input[0];
-    console.log([...str].map(v => v === v.toUpperCase() ? v.toLowerCase() : v.toUpperCase()).join(''));
+    str = input[0].split('').map(v => v.toUpperCase() === v ? v.toLowerCase() : v.toUpperCase());
+    console.log(str.join(''));
 });
