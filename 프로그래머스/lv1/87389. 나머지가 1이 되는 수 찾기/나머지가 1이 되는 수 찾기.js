@@ -1,12 +1,9 @@
 function solution(n) {
-    let answer = 0;
+    let num = 2;
     
-    for(let i = 2; i < n; i++) {
-        if(n % i === 1){
-            answer = i;
-            break;
-        }
+    while(n % num !== 1) {
+        num++
     }
     
-    return answer;
+    return num;
 }
