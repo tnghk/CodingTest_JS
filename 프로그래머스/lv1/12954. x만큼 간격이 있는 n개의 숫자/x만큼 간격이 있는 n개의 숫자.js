@@ -6,6 +6,5 @@ function solution(x, n) {
         answer.push(num);
         num += x;
     }
-    
     return answer;
 }
