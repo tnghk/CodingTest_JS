@@ -1,8 +1,4 @@
-function solution(start, end) {
+function solution(start, end_num) {
     var answer = [];
-    
-    for(let i = start; i >= end; i--) {
-        answer.push(i);
-    }
-    return answer;
+    return Array.from({length: start - end_num + 1}, (_, i) => start - i);
 }
