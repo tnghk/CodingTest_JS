@@ -14,12 +14,20 @@
 // }
 
 
+// function solution(str_list) {
+    
+//     for(let i = 0; i < str_list.length; i++) {
+//         if(str_list[i] === "l")    return str_list.slice(0, i);
+//         if(str_list[i] === "r")    return str_list.slice(i + 1);
+//     }
+    
+//     return [];
+// }
+
 function solution(str_list) {
+  const i = str_list.findIndex((str) => str === "l" || str === "r");
     
-    for(let i = 0; i < str_list.length; i++) {
-        if(str_list[i] === "l")    return str_list.slice(0, i);
-        if(str_list[i] === "r")    return str_list.slice(i + 1);
-    }
+  if (i === -1) return [];
     
-    return [];
+  return str_list[i] === 'l' ? str_list.slice(0, i) : str_list.slice(i + 1);
 }
