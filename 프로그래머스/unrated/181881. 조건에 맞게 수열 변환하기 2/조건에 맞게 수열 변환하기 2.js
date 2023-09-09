@@ -2,7 +2,6 @@ function solution(arr) {
     let cnt = 0;
     let arr2 = arr.slice(0);
     
-    console.log(arr2);
     while(true) {
         let arr1 = arr2.slice(0);
         arr2 = arr1.map(v => {
