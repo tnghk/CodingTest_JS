@@ -1,24 +1,3 @@
-// function solution(arr) {
-//     let x = 0;
-//     let nextArr = [...arr];
-    
-//     while(true) {
-//         let curArr = [...nextArr];
-//         nextArr = curArr.map(v => {
-//             if(v >= 50 && v % 2 === 0)  return v / 2;
-//             if(v < 50 && v % 2 === 1)   return v * 2 + 1;
-//             return v;
-//             });
-        
-//         let flag = curArr.map((v, i) => v === nextArr[i]);
-        
-//         if(!flag.includes(false))   break;
-//         x++;
-//     }
-    
-//     return x;
-// }
-
 function solution(arr) {
     let x = 0;
     let curArr = [...arr];
@@ -33,7 +12,7 @@ function solution(arr) {
         
         flag = curArr.map((v, i) => v === nextArr[i]);
         
-        if(!flag.includes(false))   break;
+        if(!flag.includes(false))  break;
         
         curArr = [...nextArr];
         x++;
