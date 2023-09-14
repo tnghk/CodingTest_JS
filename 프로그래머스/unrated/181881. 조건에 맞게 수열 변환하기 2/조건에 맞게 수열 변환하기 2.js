@@ -1,9 +1,9 @@
 function solution(arr) {
     let cnt = 0;
-    let arr2 = arr.slice(0);
+    let arr2 = [...arr];
     
     while(true) {
-        let arr1 = arr2.slice(0);
+        let arr1 = [...arr2];
         arr2 = arr1.map(v => {
             if(v >= 50 && v % 2 === 0)  return v / 2;
             if(v < 50 && v % 2 === 1)   return v * 2 + 1;
