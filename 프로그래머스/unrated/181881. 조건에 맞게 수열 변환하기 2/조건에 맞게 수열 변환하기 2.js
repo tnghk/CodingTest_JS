@@ -1,20 +1,20 @@
 function solution(arr) {
-    let cnt = 0;
-    let arr2 = [...arr];
+    let x = 0;
+    let nextArr = [...arr];
     
     while(true) {
-        let arr1 = [...arr2];
-        arr2 = arr1.map(v => {
+        let curArr = [...nextArr];
+        nextArr = curArr.map(v => {
             if(v >= 50 && v % 2 === 0)  return v / 2;
             if(v < 50 && v % 2 === 1)   return v * 2 + 1;
             return v;
             });
         
-        let flag = arr1.map((v, i) => v === arr2[i]);
+        let flag = curArr.map((v, i) => v === nextArr[i]);
         
         if(!flag.includes(false))   break;
-        cnt++;
+        x++;
     }
     
-    return cnt;
+    return x;
 }
