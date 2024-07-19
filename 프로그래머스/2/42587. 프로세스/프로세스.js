@@ -1,21 +1,22 @@
 function solution(priorities, location) {
-    let cnt = 1;
+    let cnt = 0;
     
     while(true) {
         let cur = priorities.shift();
+        location--;
         
-        if(priorities.filter(v => cur < v).length) {
+        if(priorities.some(v => cur < v)) {
             priorities.push(cur);
-            location = location === 0 ? priorities.length - 1 : location - 1;
-            continue;
-        }
-        
-        if(location === 0) {
-            return cnt;
+            
+            if(location < 0) {
+                location = priorities.length - 1;
+            }
         } else {
-            location--;
             cnt++;
-            continue;
+            
+            if(location === -1) {
+                return cnt;
+            }
         }
     }
     
