@@ -20,7 +20,12 @@ function solution(genres, plays) {
     let sortedGenres = Object.entries(totalObj).sort((a, b) => b[1] - a[1]).map(v => v[0]);
     
     for(let genre of sortedGenres) {
-        playsObj[genre].sort((a, b) => b[1] - a[1]);
+        playsObj[genre].sort((a, b) => {
+            if(a[1] === b[1]) {
+                return a[0] - b[0];
+            }
+            return b[1] - a[1];
+        });
         answer.push(playsObj[genre][0][0]);
         
         if(playsObj[genre][1]) {
