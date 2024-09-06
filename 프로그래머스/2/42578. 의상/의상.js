@@ -1,26 +1,6 @@
 function solution(clothes) {
-    let clothesMap = new Map;
-    
-    clothes.forEach(([n, k]) => {
-        if(!clothesMap.has(k)) {
-            clothesMap.set(k, [n]);
-        } else {
-            let arr = clothesMap.get(k);
-            arr.push(n);
-            clothesMap.set(k, arr);
-        }
-    });
-    
-    if(clothesMap.size === 1) {
-        let [value] = clothesMap.values();
-        return value.length;
-    }
-    
-    let cnt = 1;
-    
-    for(let value of clothesMap.values()) {
-        cnt *= value.length + 1;
-    }
-    
-    return cnt - 1;
+    return Object.values(clothes.reduce((obj, t)=> {
+        obj[t[1]] = obj[t[1]] ? obj[t[1]] + 1 : 1;
+        return obj;
+    } , {})).reduce((a,b)=> a*(b+1), 1)-1;    
 }
